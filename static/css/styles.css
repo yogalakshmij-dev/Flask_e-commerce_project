@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcfcfc;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;   
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.product {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+.product-details {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* section 1 */
+.category-card {
+      position: relative;
+      overflow: hidden; /* Ensures the text doesn't overflow the image */
+      border-radius: 0.5rem; /* Optional: adds rounded corners to the card */
+      margin-bottom: 30px; /* Spacing between cards */
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+        transform: scale(1.05); /* Scale up the card on hover */
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%; 
+      object-fit: cover;
+      display: block; /* Removes bottom whitespace */
+    }
+
+    .category-text {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white; /* Makes text white */
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+      padding: 10px; /* Padding around the text */
+      border-radius: 5px; /* Rounded corners for the text box */
+    }
+
+    .category-text h5 {
+      font-weight: bold;
+      margin: 0; /* Removes default margin */
+    }
+
+    .shop-now {
+      color: #5cb85c;
+      font-weight: bold;
+      text-decoration: none; /* Removes underline */
+    }
+
+    .shop-now span {
+      margin-left: 5px; /* Space between text and arrow */
+    }
+
+/* About section */
+
+        .about-us .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+    
+        .about-us .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .about-us .icon {
+            font-size: 1.5rem;
+            color: #28a745; /* Green color for the icons */
+        }
+
+/* Footer Section */
+.footer-section {
+    background-color: #f8d3d35e;
+    color: #333;
+    padding: 40px 0;
+}
+
+.footer-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect on hover */
+}
+
+.footer-section h4, .footer-section h5 {
+    font-weight: bold;
+    color: #FF9900;
+}
+
+.footer-section p, .footer-section a {
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.footer-links {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.footer-links li a:hover {
+    color: #FF9900;
+    text-decoration: underline; /* Add underline on hover for links */
+}
+
+.footer-address, .footer-contact {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.footer-contact-icon {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.footer-section a:hover {
+    color: #FF9900;
+}
+
+/* Hover effect for the icons */
+.footer-icon {
+    font-size: 40px;
+    color: #FF9900;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-icon:hover {
+    transform: scale(1.2); /* Slight scale-up effect */
+    color: #e67e22; /* Change icon color on hover */
+}
+
+.footer-heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #FF9900;
+}
+
+/* Additional hover effect for links */
+.footer-section a {
+    transition: color 0.3s ease-in-out; /* Smooth transition for link color */
+}
+
+.footer-section a:hover {
+    color: #FF9900; /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Hover effect for the footer links section */
+.footer-links li a:hover {
+    color: #FF9900; /* Change color of links */
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Footer icon hover scale effect */
+.footer-icons .col-md-3:hover .footer-icon {
+    transform: scale(1.2); /* Scaling the icon slightly on hover */
+    color: #FF9900; /* Keeping the brand color */
+}
+.footer-links li:hover {
+    color: #FF9900; /* Add hover effect for links */
+}
+
+
+/* Container Styles
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Special Offer Section Styles
+.offer-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; /* White background for clean design 
+    padding: 50px; /* Generous padding around the content 
+    border-radius: 8px; /* Rounded corners 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth 
+}
+
+.offer-image img {
+    max-width: 400px; /* Restricts image size 
+    height: auto; /* Maintain aspect ratio 
+    border-radius: 10px; /* Optional: rounded corners 
+}
+
+/* Text Section 
+.offer-text {
+    max-width: 600px; /* Restricts text width for better readability 
+    text-align: left; /* Align text to the left 
+}
+
+.offer-text h1 {
+    font-size: 2.5rem; /* Larger font for the heading 
+    color: #333333; /* Darker color for emphasis 
+    margin-bottom: 20px; /* Space below the heading 
+}
+
+.offer-text p {
+    font-size: 1.2rem; /* Slightly larger font for better readability 
+    color: #666666; /* Muted text color 
+    margin-bottom: 30px; /* Space below the paragraph 
+    line-height: 1.6; /* Improve text readability 
+}
+
+/* Benefits List 
+.offer-text ul {
+    list-style-type: none; /* Remove default list style 
+    padding: 0; /* Remove padding 
+    font-size: 1.1rem; /* Increase font size slightly 
+    margin-bottom: 30px; /* Space below the list 
+}
+
+.offer-text ul li {
+    margin-bottom: 10px; /* Space between list items 
+    position: relative; /* To position the checkmark 
+    padding-left: 25px; /* Indent the text for the checkmark 
+}
+
+.offer-text ul li:before {
+    content: '✔'; /* Checkmark symbol 
+    color: #00aa00; /* Green color for the checkmark 
+    position: absolute; /* Position it relative to the list item 
+    left: 0; /* Align it to the left 
+    top: 0; /* Align it vertically 
+}
+
+/* Button Styles 
+.shop-btn {
+    display: inline-block;
+    padding: 15px 30px; /* Button padding 
+    background-color: #00aaee; /* Button background color 
+    color: #ffffff; /* Button text color 
+    text-decoration: none; /* Remove underline 
+    border-radius: 5px; /* Rounded button corners 
+    font-size: 1.2rem; /* Larger font for button text 
+    transition: background-color 0.3s ease; /* Smooth transition on hover 
+}
+
+.shop-btn:hover {
+    background-color: #0088cc; /* Darken the button on hover 
+} */
+.vegetable-section {
+    padding: 50px 0;
+}
+
+.vegetable-section h4 {
+    font-weight: bold;
+    color: green;
+}
+
+.vegetable-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.vegetable-section p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.benefits li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.btn-dark {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1rem;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+

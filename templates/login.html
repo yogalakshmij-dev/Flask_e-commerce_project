@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    
+    .signup-container {
+        background-color: rgba(0, 0, 0, 0.281); /* Semi-transparent background for the form */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        width: 400px; /* Width of the form container */
+        margin: 40px; /* Adds some space from the top and left edges */
+    }
+
+    h2 {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    p {
+        text-align: left; /* Align the text left */
+        margin-bottom: 20px;
+    }
+
+    input {
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: none; /* Remove default border */
+        padding: 10px; /* Padding inside input fields */
+        width: 100%; /* Full width for inputs */
+    }
+
+    button {
+        width: 100%; /* Full width for the button */
+        background-color: #5cb85c; /* Button color */
+        border: none; /* Remove default border */
+        border-radius: 5px; /* Rounded corners for the button */
+        padding: 10px; /* Padding inside the button */
+        color: white; /* Text color */
+        font-weight: bold; /* Bold text */
+    }
+
+    button:hover {
+        background-color: #4cae4c; /* Darker button color on hover */
+    }
+</style>
+<div class="signup-section" style="background-image: url('/static/css/images/login.png'); background-size: cover; background-position: center; height: 100vh; display: flex; justify-content: flex-start; align-items: left; position: relative;">
+    <div class="signup-container">
+        <form method="post">
+            <h2>Join Us Today!</h2>
+            <p>Login to enjoy organic food at your doorsteps</p>
+            <input type="text" name="username" placeholder="Username" required><br><br>
+            <input type="email" name="email" placeholder="Email" required><br><br>
+            <input type="password" name="password" placeholder="Password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <div class="card-footer text-center">
+            <p>Don't have an account? <a href="{{ url_for('signup') }}" class="text-success">Signup here</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css"> <!-- Link to your custom CSS -->
+    <title>Organic Foods</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand mb-0 h1" href="#">Organic</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#product">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- <header class="hero bg-warning text-white text-center py-5"> -->
+    <header class="signup-section" style="background-image: url('/static/css/images/bg2.webp'); background-size: cover; background-position: center; height: 100vh; display: flex; justify-content: center; align-items: center; position: relative; background-position-y: -40px;">>
+        <div class="container">
+            <h1 class="display-4">Organic Foods</h1>
+            <p class="lead">at your Doorsteps</p>
+            <a href="{{ url_for('signup') }}" class="btn btn-primary btn-lg">Start Shopping</a>
+        </div>
+    </header>
+
+    <!-- About section -->
+    <section id="about"  class="about-us py-5" style="background-color: #fcfcfc;">
+        <div class="container">
+            <h2 class="text-center mb-4">About Us</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body">
+                            <h3 class="card-title">Our Mission</h3>
+                            <p class="card-text">At Organic, our mission is to provide the highest quality organic products that promote health and well-being. We believe in sustainable farming practices that benefit both our customers and the environment.</p>
+                            <p class="card-text">We strive to educate our customers on the benefits of organic living and to support local farmers by sourcing our products directly from them.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body">
+                            <h3 class="card-title">Our Values</h3>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center">
+                                    <span class="icon mr-2"><i class="fas fa-check-circle"></i></span>
+                                    <span><strong>Quality:</strong> We prioritize quality in all our products.</span>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <span class="icon mr-2"><i class="fas fa-leaf"></i></span>
+                                    <span><strong>Sustainability:</strong> We are committed to sustainable practices that protect our planet.</span>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <span class="icon mr-2"><i class="fas fa-users"></i></span>
+                                    <span><strong>Community:</strong> We support local farmers and communities.</span>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <span class="icon mr-2"><i class="fas fa-heart"></i></span>
+                                    <span><strong>Health:</strong> We believe in the importance of healthy living through organic products.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card shadow-sm border-light">
+                        <div class="card-body">
+                            <h3 class="card-title">Why Choose Us?</h3>
+                            <p class="card-text">Choosing Organic means choosing a healthier lifestyle. Our products are carefully selected to ensure they meet the highest organic standards. With us, you can be confident that you are making a positive impact on your health and the environment.</p>
+                            <p class="card-text">Join us on our journey towards a healthier, sustainable future!</p>
+                            <a href="#contact" class="btn btn-success">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Categories Section -->
+  <section class="categories py-5">
+    <div class="container">
+      <div class="row">
+        <!-- First Column -->
+        <div class="col-md-4">
+          <div class="category-card">
+            <img src="../static/css/images/fruits.jpg" alt="Fruits & Dried Fruits">
+            <div class="category-text">
+              <h5>Fruits & Dried Fruits</h5>
+              <a href="#" class="shop-now">SHOP NOW <span>🡢</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Column -->
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="category-card">
+                <img src="../static/css/images/veg.jpg" alt="Fresh Vegetables">
+                <div class="category-text">
+                  <h5>Fresh Vegetables</h5>
+                  <a href="#" class="shop-now">SHOP NOW <span>🡢</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="category-card">
+                <img src="../static/css/images/bread.jpg" alt="Fresh Bread">
+                <div class="category-text">
+                  <h5>Fresh Bread</h5>
+                  <a href="#" class="shop-now">SHOP NOW <span>🡢</span></a>
+                </div>
+              </div>
+
+              <div class="category-card mt-4">
+                <img src="../static/css/images/sea food.jpg" alt="Fish & Seafood">
+                <div class="category-text">
+                  <h5>Fish & Seafood</h5>
+                  <a href="#" class="shop-now">SHOP NOW <span>🡢</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- products section -->
+   <section id="product" class="products py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Products</h2>
+            <div class="row">
+                <!-- Product Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=1) }}">
+                            <img src="../static/css/images/product1.jpg" class="card-img-top" alt="Organic Coffee Bean">
+                        </a>
+                        <!-- <img src="../static/css/images/product1.jpg" class="card-img-top" alt="Organic Apple"> -->
+                        <div class="card-body">
+                            <h5 class="card-title">Organic coffee bean</h5>
+                            <p class="card-text">₹800</p>
+                            <!-- <a href="{{ url_for('add_to_cart', product_id=1) }}" class="btn btn-primary">Add to Cart</a> -->
+                            <form action="{{ url_for('add_to_cart', product_id=1) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=2) }}">
+                            <img src="../static/css/images/product2.jpg" class="card-img-top" alt="Organic Banana">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Oil</h5>
+                            <p class="card-text">₹660</p>
+                            <form action="{{ url_for('add_to_cart', product_id=2) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=3) }}">
+                            <img src="../static/css/images/product3.jpg" class="card-img-top" alt="Organic Or3nge">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Juice Bottles</h5>
+                            <p class="card-text">₹580</p>
+                            <form action="{{ url_for('add_to_cart', product_id=3) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=4) }}">
+                            <img src="../static/css/images/product 4.webp" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Cabbage</h5>
+                            <p class="card-text">₹125</p>
+                            <form action="{{ url_for('add_to_cart', product_id=4) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=5) }}">
+                            <img src="../static/css/images/product 5.webp" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Lime</h5>
+                            <p class="card-text">₹40</p>
+                            <form action="{{ url_for('add_to_cart', product_id=5) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=6) }}">
+                            <img src="../static/css/images/product 6.webp" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Green Brinja</h5>
+                            <p class="card-text">₹60</p>
+                            <form action="{{ url_for('add_to_cart', product_id=6) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=7) }}">
+                            <img src="../static/css/images/product 7.webp" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Orange</h5>
+                            <p class="card-text">$2.00</p>
+                            <form action="{{ url_for('add_to_cart', product_id=7) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=8) }}">
+                            <img src="../static/css/images/product 8.webp" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Tomato</h5>
+                            <p class="card-text">₹100</p>
+                            <form action="{{ url_for('add_to_cart', product_id=8) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=9) }}">
+                            <img src="../static/css/images/product 9.webp" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Lettuce</h5>
+                            <p class="card-text">₹85</p>
+                            <form action="{{ url_for('add_to_cart', product_id=9) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=10) }}">
+                            <img src="../static/css/images/product 10.png" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Mixed Vegetables</h5>
+                            <p class="card-text">₹290</p>
+                            <form action="{{ url_for('add_to_cart', product_id=10) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=11) }}">
+                            <img src="../static/css/images/product 11.png" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Saffron</h5>
+                            <p class="card-text">₹980</p>
+                            <form action="{{ url_for('add_to_cart', product_id=11) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=12) }}">
+                            <img src="../static/css/images/product 12.png" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Cherry Tomatoes</h5>
+                            <p class="card-text">₹200</p>
+                            <form action="{{ url_for('add_to_cart', product_id=12) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <section class="vegetable-section">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <img src="../static/css/images/mix-vegetable.webp" alt="Fresh Vegetables" class="img-fluid">
+                            </div>
+                            <div class="col-lg-6">
+                                <h4 class="text-success">Freshness in Every Bite</h4>
+                                <h1>Discover the Rich Variety of Fresh Vegetables</h1>
+                                <p>
+                                    Discover a diverse selection of fresh vegetables at Vegvi. From everyday staples to exotic finds, we offer premium produce straight from local farms.
+                                </p>
+                                <ul class="benefits">
+                                    <li><img src="../static/css/images/vitamin_icon.png" alt="Rich in Vitamin"> Rich in Vitamin</li>
+                                    <li><img src="../static/css/images/fiber_icon.png" alt="Provides fiber"> Provides fiber to the body</li>
+                                    <li><img src="../static/css/images/vegetable_icon.png" alt="Delicious dishes"> Is the ingredient of delicious dishes</li>
+                                </ul>
+                                <button class="btn btn-dark mt-3">Shop Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=13) }}">
+                            <img src="../static/css/images/product 13.png" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Juicy Fresh Malta</h5>
+                            <p class="card-text">₹80</p>
+                            <form action="{{ url_for('add_to_cart', product_id=13) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=14) }}">
+                            <img src="../static/css/images/product 14.png" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Bucket of Sofeda</h5>
+                            <p class="card-text">₹250</p>
+                            <form action="{{ url_for('add_to_cart', product_id=14) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=15) }}">
+                            <img src="../static/css/images/product 15.png" class="card-img-top" alt="Organic Orange">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Red Strawberry Jam</h5>
+                            <p class="card-text">₹330</p>
+                            <form action="{{ url_for('add_to_cart', product_id=15) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=16) }}">
+                            <img src="../static/css/images/product 16.png" class="card-img-top" alt="Organic Apple">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Orange</h5>
+                            <p class="card-text">₹100</p>
+                            <form action="{{ url_for('add_to_cart', product_id=16) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=17) }}">
+                            <img src="../static/css/images/product 17.png" class="card-img-top" alt="Organic Apple">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Tomato Cluster</h5>
+                            <p class="card-text">₹120</p>
+                            <form action="{{ url_for('add_to_cart', product_id=17) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=18) }}">
+                            <img src="../static/css/images/product 18.png" class="card-img-top" alt="Organic Apple">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic  Broccoli</h5>
+                            <p class="card-text">₹165</p>
+                            <form action="{{ url_for('add_to_cart', product_id=18) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=19) }}">
+                            <img src="../static/css/images/product 19.jpg" class="card-img-top" alt="Organic Apple">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Spinach</h5>
+                            <p class="card-text">₹125</p>
+                            <form action="{{ url_for('add_to_cart', product_id=19) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=20) }}">
+                            <img src="../static/css/images/product 20.jpg" class="card-img-top" alt="Organic Apple">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Lettuce Head</h5>
+                            <p class="card-text">₹150</p>
+                            <form action="{{ url_for('add_to_cart', product_id=20) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=22) }}">
+                            <img src="../static/css/images/product 22.jpg" class="card-img-top" alt="Organic Banana">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Celery</h5>
+                            <p class="card-text">₹125</p>
+                            <form action="{{ url_for('add_to_cart', product_id=22) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=21) }}">
+                            <img src="../static/css/images/product 21.jpg" class="card-img-top" alt="Organic Banana">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic  Carrots</h5>
+                            <p class="card-text">₹80</p>
+                            <form action="{{ url_for('add_to_cart', product_id=21) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=23) }}">
+                            <img src="../static/css/images/product 23.png" class="card-img-top" alt="Organic Banana">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Bananas</h5>
+                            <p class="card-text">₹150</p>
+                            <form action="{{ url_for('add_to_cart', product_id=23) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card shadow">
+                        <a href="{{ url_for('product_detail', product_id=24) }}">
+                            <img src="../static/css/images/product 24.jpg" class="card-img-top" alt="Organic Banana">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Organic Potato</h5>
+                            <p class="card-text">₹400</p>
+                            <form action="{{ url_for('add_to_cart', product_id=24) }}" method="POST">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+<footer id="footer" class="footer-section py-5">
+    <div class="container">
+        <!-- Feature Icons Row -->
+        <div class="row text-center mb-5">
+            <div class="col-md-3">
+                <i class="fas fa-truck footer-icon"></i>
+                <p class="footer-feature">Free delivery</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-money-bill footer-icon"></i>
+                <p class="footer-feature">Cash on delivery</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-undo-alt footer-icon"></i>
+                <p class="footer-feature">30 days returns</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-headset footer-icon"></i>
+                <p class="footer-feature">Online support</p>
+            </div>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="footer-heading">Organic</h4>
+                <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="footer-heading">Address</h5>
+                <p>38 Block Street Area, Licard, Hamonia Road, Sydney, Australia</p>
+            </div>
+            <div class="col-md-4">
+                <h5 class="footer-heading">Get in touch</h5>
+                <p><i class="fas fa-phone"></i> (+91) 1234 5678 90</p>
+                <p><i class="fas fa-envelope"></i> support@123.com</p>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <h6 class="footer-heading">Top Categories</h6>
+                <ul class="footer-links">
+                    <li>Fresh fruits</li>
+                    <li>Organic wine</li>
+                    <li>Fresh vegetables</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="footer-heading">Services</h6>
+                <ul class="footer-links">
+                    <li>About Vegist</li>
+                    <li>FAQ's</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="footer-heading">Privacy & Terms</h6>
+                <ul class="footer-links">
+                    <li>Payment policy</li>
+                    <li>Privacy policy</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="footer-heading">My Account</h6>
+                <ul class="footer-links">
+                    <li>My Account</li>
+                    <li>My Cart</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-4">
+        <p>&copy; 2024 Organic. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

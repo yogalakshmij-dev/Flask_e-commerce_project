@@ -1,0 +1,22 @@
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartPreview">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      {% for item in cart_items %}
+      <div class="cart-item">
+        <img src="{{ url_for('static', filename='images/' + item['image']) }}" alt="{{ item['name'] }}" class="img-fluid" />
+        <p>{{ item['name'] }} - ${{ item['price'] }}</p>
+        <button class="btn btn-danger btn-sm">Remove</button>
+      </div>
+      {% endfor %}
+      <hr />
+      <p>Subtotal: ${{ subtotal }}</p>
+      <p>Total: ${{ subtotal }}</p>
+      <a href="{{ url_for('view_cart') }}" class="btn btn-primary">View Cart</a>
+      <a href="/checkout" class="btn btn-success">Checkout</a>
+    </div>
+  </div>
+  

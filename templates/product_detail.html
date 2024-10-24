@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product['name'] }}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-control input {
+            width: 60px;
+            text-align: center;
+        }
+
+        .tabs-section {
+            margin-top: 30px;
+        }
+
+        .btn-pick {
+            background-color: orange;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand mb-0 h1" href="#">Organic</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('home')}}">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('cart') }}">Cart</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Product Image Section -->
+            <div class="col-md-6">
+                <img src="{{ product['image_url'] }}" alt="{{ product['name'] }}" class="product-img img-fluid">
+            </div>
+
+            <!-- Product Info Section -->
+            <div class="col-md-6">
+                <h1>{{ product['name'] }}</h1>
+                <p class="lead">Price: ₹{{ product['price'] }}</p>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="size" class="form-label">Choose Size:</label>
+                        <select id="size" class="form-select">
+                            <option value="500gm">500 GM</option>
+                            <option value="1kg">1 KG</option>
+                        </select>
+                    </div>
+                    <div class="quantity-control mb-3">
+                        <label for="quantity" class="form-label">Quantity:</label>
+                        <button type="button" class="btn btn-secondary mx-2">-</button>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" class="form-control">
+                        <button type="button" class="btn btn-secondary mx-2">+</button>
+                    </div>
+                    <button type="submit" class="btn btn-pick btn-lg"><i class="bi bi-cart-fill"></i> Pick</button>
+                    <button type="submit" class="btn btn-pick btn-lg"><i class="bi bi-cart-fill"></i> Buy it now</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Product Details Tabs -->
+        <div class="row tabs-section">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Product Description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="health-tab" data-bs-toggle="tab" data-bs-target="#health" type="button" role="tab" aria-controls="health" aria-selected="false">Health Tips</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="recommend-tab" data-bs-toggle="tab" data-bs-target="#recommend" type="button" role="tab" aria-controls="recommend" aria-selected="false">Recommendation</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">Customer Review</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                        <p>{{ product['description'] }}</p>
+                    </div>
+                    <div class="tab-pane fade" id="health" role="tabpanel" aria-labelledby="health-tab">
+                        <p>{{ product['health_tips'] }}</p>
+                    </div>
+                    <div class="tab-pane fade" id="recommend" role="tabpanel" aria-labelledby="recommend-tab">
+                        <p>{{ product['recommendation'] }}</p>
+                    </div>
+                    <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                        <p>{{ product['customer_reviews'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Products Button -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Products</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
